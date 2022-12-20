@@ -19,4 +19,10 @@ describe("Test login Component", () => {
     // not:間違っていることが今回は真なので、trueを入れる
     expect(validateEmail(testEmail)).not.toBe(true);
   });
+
+  // 成功するかどうか
+  test("should be successed on email validation", () => {
+    const testEmail = "taka@gmail.com";
+    expect(validateEmail(testEmail)).toBe(true);
+  });
 })
