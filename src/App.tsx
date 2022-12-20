@@ -1,12 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Col, Row } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
+import Login from './component/Login';
 
 function App() {
   return (
-    <div className="App">
+    <div className="Container app-container" role="parent">
       <Row>
         <Col>
         <h1>テストチュートリアル</h1>
@@ -14,7 +13,9 @@ function App() {
       </Row>
 
       <Row>
-        <Col></Col>
+        <Col>
+          <Login data-testid="child"></Login>
+        </Col>
       </Row>
     </div>
   );
