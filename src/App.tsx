@@ -14,6 +14,7 @@ function App() {
 
       <Row>
         <Col>
+          {/* data属性の指定 */}
           <Login data-testid="child"></Login>
         </Col>
       </Row>
