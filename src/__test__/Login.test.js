@@ -6,9 +6,7 @@ describe("Test login Component", () => {
   // test関数はsetupTests.tsでインポートしているから使える
   test("render form with 1 button", async () => {
     render(<Login /> );
-    
     const button = await screen.findAllByRole("button")
-
     expect(button).toHaveLength(1) // 何個あるかをテストするときはtoHaveLengthを使う
   })
 
@@ -25,4 +23,11 @@ describe("Test login Component", () => {
     const testEmail = "taka@gmail.com";
     expect(validateEmail(testEmail)).toBe(true);
   });
+
+  // type=passwordが指定されているかどうか
+  test("render password type form", () => {
+    render(<Login />);
+    const form = screen.getByPlaceholderText("パスワード入力")
+    expect(form).toHaveAttribute("type", "password");
+  })
 })
